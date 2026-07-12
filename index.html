@@ -1,1 +1,264 @@
-.
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScoutVision 2.0 Final</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+<h1>🏀 ScoutVision 2.0 Final</h1>
+</header>
+
+<div class="container">
+
+<div class="left">
+
+<div class="card">
+
+<h2>🎥 경기 영상</h2>
+
+<input type="file" id="videoInput" accept="video/*">
+
+<video id="video" controls></video>
+
+<div class="videoBtns">
+
+<button onclick="back5()">⏪5초</button>
+
+<button onclick="playPause()">▶/⏸</button>
+
+<button onclick="forward5()">5초⏩</button>
+
+<button onclick="setSpeed(0.5)">0.5x</button>
+
+<button onclick="setSpeed(1)">1x</button>
+
+<button onclick="setSpeed(2)">2x</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏀 점수판</h2>
+
+<div class="scoreBoard">
+
+<div>
+
+<input id="teamAName" value="A팀">
+
+<div id="scoreA" class="score">0</div>
+
+<button onclick="score('A',1)">+1</button>
+
+<button onclick="score('A',2)">+2</button>
+
+<button onclick="score('A',3)">+3</button>
+
+</div>
+
+<div>
+
+<h1 id="quarter">1Q</h1>
+
+<button onclick="nextQuarter()">다음 쿼터</button>
+
+</div>
+
+<div>
+
+<input id="teamBName" value="B팀">
+
+<div id="scoreB" class="score">0</div>
+
+<button onclick="score('B',1)">+1</button>
+
+<button onclick="score('B',2)">+2</button>
+
+<button onclick="score('B',3)">+3</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>👥 선수 등록</h2>
+
+<select id="teamSelect">
+
+<option>A팀</option>
+
+<option>B팀</option>
+
+</select>
+
+<input
+id="playerInput"
+placeholder="선수 이름">
+
+<button onclick="addPlayer()">
+
+선수 추가
+
+</button>
+
+<div id="players"></div>
+
+</div>
+
+</div>
+
+
+<div class="right">
+
+<div class="card">
+
+<h2>📝 기록</h2>
+
+<div class="recordGrid">
+
+<button onclick="record('2점 성공')">2점 성공</button>
+
+<button onclick="record('2점 실패')">2점 실패</button>
+
+<button onclick="record('3점 성공')">3점 성공</button>
+
+<button onclick="record('3점 실패')">3점 실패</button>
+
+<button onclick="record('자유투 성공')">자유투 성공</button>
+
+<button onclick="record('자유투 실패')">자유투 실패</button>
+
+<button onclick="record('리바운드')">리바운드</button>
+
+<button onclick="record('어시스트')">어시스트</button>
+
+<button onclick="record('스틸')">스틸</button>
+
+<button onclick="record('블록')">블록</button>
+
+<button onclick="record('턴오버')">턴오버</button>
+
+</div>
+
+</div>
+<div class="card">
+
+<h2>🎯 슛차트</h2>
+
+<canvas
+id="court"
+width="350"
+height="500">
+</canvas>
+
+<div class="shotButtons">
+
+<button onclick="setShotMode('make')">
+🟢 성공
+</button>
+
+<button onclick="setShotMode('miss')">
+🔴 실패
+</button>
+
+<button onclick="clearShots()">
+🗑 초기화
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🏆 MVP</h2>
+
+<div id="mvp">
+
+아직 기록 없음
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🤖 AI 분석</h2>
+
+<div id="ai">
+
+기록이 없습니다.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📊 팀 통계</h2>
+
+<div id="teamStats">
+
+기록 없음
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>👤 선수 통계</h2>
+
+<div id="playerStats">
+
+기록 없음
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📄 경기 리포트</h2>
+
+<div id="report">
+
+아직 경기 기록이 없습니다.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🕒 타임라인</h2>
+
+<div id="timeline">
+
+기록 없음
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
